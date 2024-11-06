@@ -11,3 +11,7 @@ print(greeting.title())  # "Hello, World!"
 # Removing whitespace
 text = "   Hello, Python!   "
 print(text.strip())  # "Hello, Python!"
+
+# Replacing substrings
+modified_text = greeting.replace("World", "Alice")
+print(modified_text)  # "Hello, Alice!"
