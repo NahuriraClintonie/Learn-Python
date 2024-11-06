@@ -19,3 +19,6 @@ print(modified_text)  # "Hello, Alice!"
 
 # Counting occurrences
 count_o = greeting.count("o")  # 2
+
+# Finding substrings
+position = greeting.find("World")  # 7
