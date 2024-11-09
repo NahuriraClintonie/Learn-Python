@@ -1,0 +1,29 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+
+# Virtual environment directories
+venv/
+env/
+.virtualenv/
+
+# Pytest cache
+.pytest_cache/
+
+# Logs and other debug files
+*.log
+
+# Environment variables and configurations
+*.env
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# macOS generated files
+.DS_Store
+
+# VS Code settings
+.vscode/
+
+# JetBrains IDE settings
+.idea/
