@@ -15,16 +15,34 @@ def handle_user_choice(choice):
         result = seat.book_seat(seat_number)  # Call the book_seat function
         print(result)  # Display the booking result to the user
     elif choice == '3':
-        # Placeholder for cancel booking functionality
-        print("You selected: Cancel a Booking (Functionality coming soon)")
+        # Cancel a booking
+        booked_seats = seat.get_booked_seats()
+        if not booked_seats:
+            print("There are no booked seats to cancel.")
+        else:
+            print("Booked Seats:", ", ".join(booked_seats))
+            seat_number = input("Enter the seat number to cancel: ")
+            if seat_number in booked_seats:
+                confirmation = input(f"Are you sure you want to cancel seat {seat_number}? (yes/no): ").lower()
+                if confirmation == 'yes':
+                    result = seat.cancel_seat(seat_number)
+                    print(result)
+                else:
+                    print("Cancellation aborted.")
+            else:
+                print(f"Seat {seat_number} is not currently booked.")
     elif choice == '4':
-        # Placeholder for view all bookings functionality
-        print("You selected: View All Bookings (Functionality coming soon)")
+        # View all bookings
+        booked_seats = seat.get_booked_seats()
+        if booked_seats:
+            print("\nAll Booked Seats:", ", ".join(booked_seats))
+        else:
+            print("\nNo seats are currently booked.")
     elif choice == '5':
-        print("Logging out... Goodbye!")
+        print("\nLogging out... Goodbye!")
         return False  # To indicate exit
     else:
-        print("Invalid choice. Please select a valid option.")
+        print("\nInvalid choice. Please select a valid option.")
     
     return True  # To keep the program running
 
