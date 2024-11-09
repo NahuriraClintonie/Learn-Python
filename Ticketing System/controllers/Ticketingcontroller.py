@@ -1,13 +1,17 @@
+import models.BookSeat
 import views.view
+import models
 
 def handle_user_choice(choice):
-    """Handle user choices and call the appropriate function."""
+    "Handle user choices and call the appropriate function."
     if choice == '1':
         # Placeholder for view available seats functionality
         print("You selected: View Available Seats (Functionality coming soon)")
     elif choice == '2':
         # Placeholder for book a seat functionality
-        print("You selected: Book a Seat (Functionality coming soon)")
+        seat_number = input("Enter the seat number to book (e.g., A1, B2): ")
+        result = models.BookSeat.book_seat(seat_number)  # Call the book_seat function
+        print(result)  # Display the booking result to the user
     elif choice == '3':
         # Placeholder for cancel booking functionality
         print("You selected: Cancel a Booking (Functionality coming soon)")
