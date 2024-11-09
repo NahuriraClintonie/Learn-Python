@@ -30,3 +30,27 @@ def get_available_seats():
         list: List of available (unbooked) seats.
     """
     return [seat for seat in all_seats if seat not in booked_seats]
+
+def get_booked_seats():
+    """
+    Get a list of all currently booked seats.
+    
+    Returns:
+        list: List of booked seats.
+    """
+    return booked_seats
+
+def cancel_seat(seat_number):
+    """
+    Cancel a booking for a given seat number.
+    
+    Args:
+        seat_number (str): The seat number to cancel.
+        
+    Returns:
+        str: A message indicating the result of the cancellation.
+    """
+    if seat_number not in booked_seats:
+        return f"Seat {seat_number} is not booked."
+    booked_seats.remove(seat_number)
+    return f"Seat {seat_number} has been successfully canceled."

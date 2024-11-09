@@ -1,6 +1,6 @@
 # main.py
-import controllers.Ticketingcontroller
+import controllers.Ticketingcontroller as controller
 
 if __name__ == "__main__":
-    print("\nWelcome to the Ticket Booking System!")
-    controllers.Ticketingcontroller.main_menu()
+    print("\n\t\t***Welcome to the Ticket Booking System!***")
+    controller.main_menu()

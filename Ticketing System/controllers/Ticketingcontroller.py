@@ -1,20 +1,18 @@
-import models.BookSeat
-import views.view
-import models
+import views.view as view
+import models.Seat as seat
 
 def handle_user_choice(choice):
     "Handle user choices and call the appropriate function."
     if choice == '1':
         # View available seats
-        available_seats = models.BookSeat.get_available_seats()
+        available_seats = seat.get_available_seats()
         if available_seats:
             print("Available Seats:", ", ".join(available_seats))
         else:
             print("All seats are currently booked.")
     elif choice == '2':
-        # Placeholder for book a seat functionality
         seat_number = input("Enter the seat number to book (e.g., A1, B2): ")
-        result = models.BookSeat.book_seat(seat_number)  # Call the book_seat function
+        result = seat.book_seat(seat_number)  # Call the book_seat function
         print(result)  # Display the booking result to the user
     elif choice == '3':
         # Placeholder for cancel booking functionality
@@ -33,7 +31,7 @@ def handle_user_choice(choice):
 def main_menu():
     """Main menu loop to keep displaying the menu and handling choices."""
     while True:
-        views.view.display_menu()
+        view.display_menu()
         choice = input("Enter your choice (1-5): ")
         if not handle_user_choice(choice):
             break
