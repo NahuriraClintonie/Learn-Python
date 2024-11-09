@@ -5,8 +5,12 @@ import models
 def handle_user_choice(choice):
     "Handle user choices and call the appropriate function."
     if choice == '1':
-        # Placeholder for view available seats functionality
-        print("You selected: View Available Seats (Functionality coming soon)")
+        # View available seats
+        available_seats = models.BookSeat.get_available_seats()
+        if available_seats:
+            print("Available Seats:", ", ".join(available_seats))
+        else:
+            print("All seats are currently booked.")
     elif choice == '2':
         # Placeholder for book a seat functionality
         seat_number = input("Enter the seat number to book (e.g., A1, B2): ")
