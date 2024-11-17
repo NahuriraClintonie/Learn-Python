@@ -1,6 +1,7 @@
 
 from log_reader import LogFileReader
 from log_filter import filter_logs
+from file_operations import delete_file
 
 def main():
     log_file = "logs.txt"
@@ -11,7 +12,8 @@ def main():
         print("\nMenu:")
         print("1. View All Logs")
         print("2. View Logs by Severity (INFO, WARNING, ERROR)")
-        print("3. Exit")
+        print("3. Delete Log File")
+        print("4. Exit")
         choice = input("Enter your choice: ")
 
         if choice == "1":
@@ -24,6 +26,8 @@ def main():
             for log in filtered_logs:
                 print(log)
         elif choice == "3":
+            delete_file(log_file)
+        elif choice == "4":
             print("Exiting Log Analyzer. Goodbye!")
             break
         else:
